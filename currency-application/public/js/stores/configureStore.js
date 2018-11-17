@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
 
 const defaultState = {
   originAmount: '0.00'
@@ -9,10 +10,9 @@ function amount(state = defaultState, action) {
   return state;
 }
 
-const store = createStore(amount);
-
-store.subscribe(() => {
-  console.log('subscribe: state', store.getState())
-})
+const store = createStore(
+  amount,
+  applyMiddleware(logger)
+);
 
 export default store;
