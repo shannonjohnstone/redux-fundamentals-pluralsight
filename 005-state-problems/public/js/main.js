@@ -9,7 +9,7 @@ class MainComponent extends React.Component {
     render() {
         return (
             <div>
-                <Conversion />
+                <Conversion name="Currency Conversion"/>
             </div>
         )
     }

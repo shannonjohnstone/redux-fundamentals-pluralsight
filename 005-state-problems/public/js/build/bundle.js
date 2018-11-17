@@ -1764,7 +1764,7 @@ var MainComponent = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_conversion2.default, null)
+                _react2.default.createElement(_conversion2.default, { name: 'Currency Conversion' })
             );
         }
     }]);
@@ -3083,7 +3083,8 @@ var Conversion = function (_React$Component2) {
     return Conversion;
 }(_react2.default.Component);
 
-exports.default = (0, _reactRedux.connect)(function (state, props) {
+exports.default = (0, _reactRedux.connect)(function (state, ownProps) {
+    console.log(ownProps);
     return {
         originAmount: state.originAmount
     };
@@ -3119,7 +3120,7 @@ function amount() {
 var store = (0, _redux.createStore)(amount);
 
 store.subscribe(function () {
-  console.log('state', store.getState());
+  console.log('subscribe: state', store.getState());
 });
 
 // store.dispatch({ type: 'CHANGE_ORIGIN_AMOUNT', data: '300.60' });

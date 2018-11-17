@@ -292,7 +292,9 @@ class Conversion extends React.Component {
 }
 
 export default connect(
-    (state, props) => ({
-        originAmount: state.originAmount
-    })
+    (state, ownProps) => {
+        return {
+            originAmount: state.originAmount
+        }
+    }
 )(Conversion);
